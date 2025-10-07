@@ -424,3 +424,51 @@ body{
 #galeriee {
   scroll-margin-top: 50px;
 }
+
+.footer__container {
+  background-color: #363636;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+  border-top: 2px solid #83c5be;
+}
+
+.footer__title {
+  font-size: 2.2rem;
+  background-image: linear-gradient(to top, #83c5be 0%, #006d77 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.footer__socials {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.footer__icon {
+  color: #83c5be;
+  font-size: 2rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer__icon:hover {
+  color: #ddfff7;
+  transform: scale(1.2);
+}
+
+.footer__copy {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__title {
+    font-size: 1.8rem;
+  }
+  .footer__icon {
+    font-size: 1.8rem;
+  }
+}

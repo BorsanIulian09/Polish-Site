@@ -1,19 +1,37 @@
-// java.js
+// ==========================
+// NAVBAR MOBILE TOGGLE + AUTO CLOSE
+// ==========================
 document.addEventListener('DOMContentLoaded', () => {
-  const menuBtn = document.querySelector('#mobile-menu');
-  const menu = document.querySelector('.navbar__menu');
+  const menuBtn = document.querySelector('#mobile-menu'); // butonul hamburger
+  const menu = document.querySelector('.navbar__menu');   // meniul
+  const links = document.querySelectorAll('.navbar__links'); // toate linkurile din meniu
 
   if (!menuBtn || !menu) {
-    console.warn('Nu găsesc #mobile-menu sau .navbar__menu');
-    return;
-  }
+    console.warn('⚠️ Nu găsesc #mobile-menu sau .navbar__menu');
+  } else {
+    // Deschide / închide meniul la click pe hamburger
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('is-active');
+      menu.classList.toggle('active');
+    });
 
-  menuBtn.addEventListener('click', () => {
-    menuBtn.classList.toggle('is-active');
-    menu.classList.toggle('active');
-  });
+    // 🔹 Închide meniul când se apasă pe un link
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        if (menu.classList.contains('active')) {
+          menu.classList.remove('active');
+          menuBtn.classList.remove('is-active');
+        }
+      });
+    });
+  }
 });
-// java.jsdocument.addEventListener('DOMContentLoaded', () => {
+
+
+// ==========================
+// GALERIE ANIMAȚII PE SCROLL
+// ==========================
+document.addEventListener('DOMContentLoaded', () => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const groups = document.querySelectorAll('.images');
 
@@ -46,15 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     imgs.forEach((img, i) => {
       // === STABILEȘTE DIRECȚIA ===
-      // 1) clasa explicită
       let fromRight = img.classList.contains('img-dreapta');
-      // 2) atribut data-dir
       if (img.dataset.dir === 'right') fromRight = true;
       if (img.dataset.dir === 'left') fromRight = false;
-      // 3) ID conține „dreapta”
       if (/dreapta/i.test(img.id)) fromRight = true;
       if (/stanga/i.test(img.id)) fromRight = false;
-      // 4) fallback pe poziție: 0 stânga, 1 dreapta, 2 stânga, 3 dreapta...
       if (fromRight === undefined) fromRight = (i % 2 === 1);
 
       const startX = fromRight ? 100 : -100; // px
@@ -67,10 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ? 'none'
         : 'transform 800ms ease, opacity 800ms ease';
 
-      // păstrează indexul pentru stagger
       img.dataset.stagger = i;
-
       observer.observe(img);
     });
   });
-
+});
