@@ -1,14 +1,12 @@
 *{
-scroll-behavior: smooth;
-
+  scroll-behavior: smooth;
 }
 body{
   box-sizing: border-box;
   margin:0;
   padding:0;
   font-family:'Kumbh Sans',sans-serif;
-      background:#363636;
-
+  background:#363636;
 }
 
 /* NAVBAR DESKTOP */
@@ -37,8 +35,7 @@ body{
 
 #navbar__logo{
   background-color:#ddfff7;
-    background-image: linear-gradient(to top, #006d77 0%, #83c5be 100%);
-
+  background-image: linear-gradient(to top, #006d77 0%, #83c5be 100%);
   background-size:100%;
   -webkit-background-clip:text;
   -moz-background-clip:text;
@@ -73,7 +70,7 @@ body{
   border-radius:4px;
   padding:0 1rem;
   height:100%;
-  transition: color 0.3s ease; /* mutat pe starea de bază */
+  transition: color 0.3s ease;
 }
 
 .navbar__links:hover{
@@ -100,7 +97,6 @@ body{
     padding:0 20px;
   }
 
-  /* Arată butonul hamburger */
   .navbar__toggle{
     display:block;
     position:absolute;
@@ -110,7 +106,6 @@ body{
     z-index:1000;
   }
 
-  /* Meniul mobil: ascuns implicit */
   .navbar__menu{
     display:grid;
     grid-template-columns:auto;
@@ -119,7 +114,7 @@ body{
     position:absolute;
     align-items: center;
     left:0;
-    top:-1000px;     /* scos din viewport */
+    top:-1000px;
     opacity:0;
     width:100%;
     height:50vh;
@@ -130,7 +125,6 @@ body{
     padding-top:80px; /* ca să nu se suprapună peste navbar */
   }
 
-  /* Când e activ, apare sub navbar */
   .navbar__menu.active{
     top:80px;        /* exact sub bara de 80px */
     opacity:1;
@@ -152,27 +146,27 @@ body{
     padding:2rem 0;
     width:100%;
     height:auto;
-    
   }
 
-  /* Animație hamburger -> X (opțional) */
   .navbar__toggle.is-active .bar:nth-child(2){ opacity:0; }
   .navbar__toggle.is-active .bar:nth-child(1){ transform:translateY(8px) rotate(45deg); }
   .navbar__toggle.is-active .bar:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
 }
-.logo-icon{
-    width: 28px;
-    height: 28px;
-    margin-right: 8px;
-    vertical-align: middle;
-}
-/*hero section*/
 
+.logo-icon{
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* ===================== */
+/* HERO SECTION          */
+/* ===================== */
 .main{
   background-color: #363636;
 }
 .main__container{
-  
   display:grid;
   grid-template-columns:1fr 1fr;
   align-items: center;
@@ -187,7 +181,6 @@ body{
 }
 .main__content h1{
   font-size: 4rem;
-  background-color: #ff8177;
   background-image: linear-gradient(to top, #006d77 0%, #83c5be 100%);
   background-size: 100%;
   -webkit-background-clip: text;
@@ -198,7 +191,6 @@ body{
 
 .main__content h2{
   font-size: 4rem;
-  background-color: #ff8177;
   background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
   background-size: 100%;
   -webkit-background-clip: text;
@@ -215,18 +207,17 @@ body{
 #main__img{
   display: block;
   width: 100%;
-  height: auto;        /* păstrează proporțiile */
-  max-width: 550px;    /* opțional: limitează lățimea pe desktop */
+  height: auto;
+  max-width: 550px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 #main__img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* FIX: era 0.05 */
   box-shadow: 0 8px 20px rgba(155, 218, 255, 0.5);
 }
-/*mobile responsive*/
 
-@media screen and (max-width: 768px)
-{
+/*mobile responsive*/
+@media screen and (max-width: 768px){
   .main__container{
     display:grid;
     grid-template-columns: auto;
@@ -243,10 +234,9 @@ body{
   .main__content h1{
     font-size: 2.5rem;
     margin-top: 2rem;
-
   }
   .main__content h2{
-  font-size: 3rem;
+    font-size: 3rem;
   }
   .main_content p{
     margin-top:1rem;
@@ -258,15 +248,13 @@ body{
     justify-content: center;
   }
 }
-@media screen and (max-width:768px)
-{
+@media screen and (max-width:768px){
   .main__content h1{
     font-size: 2rem;
     margin-top: 3rem;
-
   }
   .main__content h2{
-  font-size: 2rem;
+    font-size: 2rem;
   }
   .main_content p{
     margin-top:2rem;
@@ -274,6 +262,9 @@ body{
   }
 }
 
+/* ===================== */
+/* TEXT SECTION          */
+/* ===================== */
 .text_polish h1{
   margin-top: -59px;
   margin: auto;
@@ -284,9 +275,7 @@ body{
   font-size: 2rem;
   color:#dce0d9;
 }
-
 .text_polish p{
-  
   padding:0 50px;
   z-index: 1;
   width: 100%;
@@ -294,16 +283,15 @@ body{
   font-size: 1.5rem;
   margin: auto;
   color:#dce0d9;
-
 }
+
 @media screen and (max-width: 768px) {
   .text_polish h1 {
-    margin-top: -30px;     /* mai puțin pentru mobil */
+    margin-top: -30px;
     max-width: 90%;
-    padding: 0 20px;       /* mai mic pe mobil */
-    font-size: 1.6rem;     /* puțin redus */
+    padding: 0 20px;
+    font-size: 1.6rem;
   }
-
   .text_polish p {
     max-width: 90%;
     padding: 0 20px;
@@ -311,33 +299,29 @@ body{
   }
 }
 
+/* ===================== */
+/* GALERIE               */
+/* ===================== */
 .galerie{
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 2rem;
-    position: relative;
+  position: relative;
   animation: slideFromLeft 1s ease-out forwards;
   background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
-
   -webkit-background-clip: text;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color:transparent;
-  flex-direction: column; 
-
+  flex-direction: column;
 }
 
 @keyframes slideFromLeft {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);      opacity: 1; }
 }
+
 .galerie-sectiune {
   display: flex;
   flex-direction: column;
@@ -347,10 +331,8 @@ body{
   margin-top: -60px;
 }
 
-
 .galerie-sectiune h1 {
   font-size: 3rem;
-  
   background-image: linear-gradient(to top, #dce0d9 0%, #dce0d9 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -369,38 +351,38 @@ body{
   margin-bottom: 60px;
 }
 
-/* Imaginile */
+/* Imaginile — versiunea care se repetă la scroll */
 .images img {
   width: 100%;
   max-width: 400px;
   border-radius: 10px;
   object-fit: cover;
-  opacity: 0; /* invizibil până la animație */
-  transform: translateY(50px);
+
+  /* stare inițială (invizibil + deplasat stânga/dreapta) */
+  opacity: 0;
+  transform: translateX(var(--startX, 0));
   transition: transform 0.8s ease, opacity 0.8s ease;
+  transition-delay: var(--staggerDelay, 0ms);
+  will-change: transform, opacity;
 }
 
-/* ========= ANIMAȚII ========= */
-
-/* venire din stânga */
-.img-stanga {
-  transform: translateX(-100px);
-}
-
-/* venire din dreapta */
-.img-dreapta {
-  transform: translateX(100px);
-}
-
-/* când se activează (devin vizibile) */
-.images img.apare {
+/* când devin vizibile */
+.images img.is-visible {
   opacity: 1;
   transform: translateX(0);
 }
 
-/* efect hover */
+/* Reduce motion — fără tranziții */
+@media (prefers-reduced-motion: reduce) {
+  .images img {
+    transition: none;
+    transition-delay: 0ms;
+  }
+}
+
+/* efect hover (FIX: scale corect) */
 .images img:hover {
-  transform: scale(0.05);
+  transform: scale(1.05);
   box-shadow: 0 8px 20px rgba(155, 218, 255, 0.5);
 }
 
@@ -410,11 +392,9 @@ body{
     grid-template-columns: 1fr;
     gap: 20px;
   }
-
   .galerie-sectiune h1 {
     font-size: 2rem;
   }
-
   .images img {
     max-width: 90%;
     margin: 0 auto;
@@ -425,6 +405,9 @@ body{
   scroll-margin-top: 50px;
 }
 
+/* ===================== */
+/* FOOTER                */
+/* ===================== */
 .footer__container {
   background-color: #363636;
   color: #fff;
@@ -432,7 +415,6 @@ body{
   padding: 60px 20px;
   border-top: 2px solid #83c5be;
 }
-
 .footer__title {
   font-size: 2.2rem;
   background-image: linear-gradient(to top, #83c5be 0%, #006d77 100%);
@@ -440,35 +422,26 @@ body{
   -webkit-text-fill-color: transparent;
   margin-bottom: 20px;
 }
-
 .footer__socials {
   display: flex;
   justify-content: center;
   gap: 30px;
   margin-bottom: 25px;
 }
-
 .footer__icon {
   color: #83c5be;
   font-size: 2rem;
   transition: color 0.3s ease, transform 0.3s ease;
 }
-
 .footer__icon:hover {
   color: #ddfff7;
   transform: scale(1.2);
 }
-
 .footer__copy {
   font-size: 0.9rem;
   color: #aaa;
 }
-
 @media screen and (max-width: 768px) {
-  .footer__title {
-    font-size: 1.8rem;
-  }
-  .footer__icon {
-    font-size: 1.8rem;
-  }
+  .footer__title { font-size: 1.8rem; }
+  .footer__icon { font-size: 1.8rem; }
 }
