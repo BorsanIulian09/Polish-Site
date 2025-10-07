@@ -275,9 +275,11 @@ body{
 /* ===================== */
 /* TEXT SECTION          */
 /* ===================== */
+.text_polish{
+  margin-top: 3rem;
+}
 .text_polish h1{
-  margin-top: -59px;
-  margin: auto;
+  margin: 0 auto 1.5rem auto;
   z-index:2;
   width: 100%;
   max-width: 1300px;
@@ -291,13 +293,16 @@ body{
   width: 100%;
   max-width: 1300px;
   font-size: 1.5rem;
-  margin: auto;
+  margin: 0 auto;
   color:#dce0d9;
 }
 
 @media screen and (max-width: 768px) {
+  .text_polish{
+    margin-top: 2rem;
+  }
   .text_polish h1 {
-    margin-top: -30px;
+    margin-bottom: 1rem;
     max-width: 90%;
     padding: 0 20px;
     font-size: 1.6rem;
