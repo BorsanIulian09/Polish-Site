@@ -229,6 +229,7 @@ body{
 @media screen and (max-width: 768px) {
   .main__container{
     display: grid;
+    margin-bottom: 3rem;
     grid-template-columns: 1fr;
     place-items: center;
     gap: 1.5rem;
@@ -246,6 +247,7 @@ body{
   .main__img--container{
     width: 100%;
     display: flex;
+    margin-bottom: 2rem;
     justify-content: center;
   }
 
