@@ -1,10 +1,13 @@
+*{
+scroll-behavior: smooth;
+
+}
 body{
   box-sizing: border-box;
   margin:0;
   padding:0;
   font-family:'Kumbh Sans',sans-serif;
       background:#363636;
-
 
 }
 
@@ -169,12 +172,13 @@ body{
   background-color: #363636;
 }
 .main__container{
+  
   display:grid;
   grid-template-columns:1fr 1fr;
   align-items: center;
   justify-self: center;
   margin:0 auto;
-  height:90vh;
+  height:70%;
   background-color: #363636;
   z-index:1;
   width: 100%;
@@ -340,7 +344,9 @@ body{
   align-items: center;
   text-align: center;
   padding: 60px 0;
+  margin-top: -60px;
 }
+
 
 .galerie-sectiune h1 {
   font-size: 3rem;
@@ -413,4 +419,8 @@ body{
     max-width: 90%;
     margin: 0 auto;
   }
+}
+
+#galeriee {
+  scroll-margin-top: 50px;
 }
